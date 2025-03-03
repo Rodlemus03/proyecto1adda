@@ -49,3 +49,11 @@ def load_transitions_from_json(filename):
     return {(entry["state"], entry["symbol"]): (entry["new_symbol"], entry["move"], entry["new_state"]) for entry in data}
 # Cargar transiciones
 transitions = load_transitions_from_json("turing_fibonacci_transitions.json")
+# Medir tiempos de ejecución
+def measure_execution_time(n):
+    tape_input = "1" * n
+    tm = TuringMachine(tape_input, transitions, 'q0', 'HALT')
+    start_time = time.time()
+    result = tm.run()
+    end_time = time.time()
+    return n, end_time - start_time, result
