@@ -85,3 +85,23 @@ plt.savefig("turing_fibonacci_scatter.png")
 pdf.cell(0, 10, "La siguiente gráfica muestra la dispersión de tiempos de ejecución en función del tamaño de la entrada.", ln=True)
 pdf.image("turing_fibonacci_scatter.png", x=10, w=180)
 pdf.ln(10)
+
+# Ajuste de regresión polinómica
+x = np.array(df["N"])
+y = np.array(df["Execution Time (s)"])
+poly_coeffs = np.polyfit(x, y, 2)
+x_fit = np.linspace(min(x), max(x), 100)
+y_fit = np.polyval(poly_coeffs, x_fit)
+
+plt.figure(figsize=(8,5))
+plt.scatter(df["N"], df["Execution Time (s)"], label="Tiempos de ejecución")
+plt.plot(x_fit, y_fit, color="red", label="Regresión Polinómica")
+plt.xlabel("N (Tamaño de Entrada)")
+plt.ylabel("Tiempo de Ejecución (s)")
+plt.title("Ajuste de Regresión Polinómica")
+plt.legend()
+plt.savefig("turing_fibonacci_regression.png")
+pdf.cell(0, 10, "La siguiente gráfica representa el ajuste de regresión polinómica para los tiempos de ejecución.", ln=True)
+pdf.image("turing_fibonacci_regression.png", x=10, w=180)
+pdf.ln(10)
+
