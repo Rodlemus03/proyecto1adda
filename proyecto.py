@@ -42,3 +42,8 @@ class TuringMachine:
             [f"\033[91m{self.tape[i]}\033[0m" if i == self.head else self.tape[i] for i in range(len(self.tape))]
         )
         print(f"State: {self.state}\nTape: [{tape_display}]\n")
+# Cargar transiciones desde un archivo JSON
+def load_transitions_from_json(filename):
+    with open(filename, "r") as file:
+        data = json.load(file)
+    return {(entry["state"], entry["symbol"]): (entry["new_symbol"], entry["move"], entry["new_state"]) for entry in data}
