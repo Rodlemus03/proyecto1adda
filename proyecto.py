@@ -65,3 +65,12 @@ df = pd.DataFrame(results, columns=["N", "Execution Time (s)", "Fibonacci(N)"])
 
 # Guardar tabla de tiempos
 df.to_csv("turing_fibonacci_execution_times.csv", index=False)
+
+# Crear PDF de reporte
+pdf = FPDF()
+pdf.set_auto_page_break(auto=True, margin=15)
+pdf.add_page()
+pdf.set_font("Arial", size=12)
+
+pdf.cell(200, 10, "Reporte de Análisis Empírico - Máquina de Turing para Fibonacci", ln=True, align='C')
+pdf.ln(10)
