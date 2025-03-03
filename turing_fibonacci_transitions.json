@@ -1,0 +1,13 @@
+[
+    {"state": "q0", "symbol": "1", "new_symbol": "B", "move": "R", "new_state": "q1"},
+    {"state": "q1", "symbol": "1", "new_symbol": "1", "move": "R", "new_state": "q1"},
+    {"state": "q1", "symbol": "0", "new_symbol": "0", "move": "R", "new_state": "q2"},
+    {"state": "q2", "symbol": "1", "new_symbol": "1", "move": "R", "new_state": "q2"},
+    {"state": "q2", "symbol": "B", "new_symbol": "0", "move": "L", "new_state": "q3"},
+    {"state": "q3", "symbol": "1", "new_symbol": "1", "move": "L", "new_state": "q3"},
+    {"state": "q3", "symbol": "0", "new_symbol": "0", "move": "L", "new_state": "q4"},
+    {"state": "q4", "symbol": "B", "new_symbol": "B", "move": "R", "new_state": "q5"},
+    {"state": "q5", "symbol": "0", "new_symbol": "0", "move": "R", "new_state": "q5"},
+    {"state": "q5", "symbol": "1", "new_symbol": "1", "move": "R", "new_state": "q5"},
+    {"state": "q5", "symbol": "B", "new_symbol": "B", "move": "S", "new_state": "HALT"}
+]
