@@ -47,3 +47,5 @@ def load_transitions_from_json(filename):
     with open(filename, "r") as file:
         data = json.load(file)
     return {(entry["state"], entry["symbol"]): (entry["new_symbol"], entry["move"], entry["new_state"]) for entry in data}
+# Cargar transiciones
+transitions = load_transitions_from_json("turing_fibonacci_transitions.json")
