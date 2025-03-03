@@ -57,3 +57,11 @@ def measure_execution_time(n):
     result = tm.run()
     end_time = time.time()
     return n, end_time - start_time, result
+
+# Probar la máquina con diferentes valores de N
+test_values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+results = [measure_execution_time(n) for n in test_values]
+df = pd.DataFrame(results, columns=["N", "Execution Time (s)", "Fibonacci(N)"])
+
+# Guardar tabla de tiempos
+df.to_csv("turing_fibonacci_execution_times.csv", index=False)
