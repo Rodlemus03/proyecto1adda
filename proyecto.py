@@ -105,3 +105,10 @@ pdf.cell(0, 10, "La siguiente gráfica representa el ajuste de regresión polin�
 pdf.image("turing_fibonacci_regression.png", x=10, w=180)
 pdf.ln(10)
 
+pdf.output("turing_fibonacci_report.pdf")
+
+print("\nAnálisis empírico completado. Resultados guardados:")
+print("- Tabla de tiempos: turing_fibonacci_execution_times.csv")
+print("- Diagrama de dispersión: turing_fibonacci_scatter.png")
+print("- Gráfico de regresión: turing_fibonacci_regression.png")
+print("- Reporte PDF: turing_fibonacci_report.pdf")
